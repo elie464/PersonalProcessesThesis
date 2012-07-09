@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView 
+xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+
+>
+
+<LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+<TextView android:id="@+id/processesinfonameheading"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:textColor="#FFFCC125"
+              android:textStyle="bold"
+              
+               />
+<TextView android:id="@+id/processesinfonametext"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+                        />
+
+<TextView android:id="@+id/processesinfoauthorheading"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:textColor="#FFFCC125"
+              android:textStyle="bold"
+              
+               />
+<TextView android:id="@+id/processesinfoauthortext"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+                        />
+<TextView android:id="@+id/processesinfodescheading"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:textColor="#FFFCC125"
+              android:textStyle="bold"
+              
+               />
+<TextView android:id="@+id/processesinfodesctext"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+                        />
+    
+<TextView android:id="@+id/processesinfosizeheading"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:textColor="#FFFCC125"
+              android:textStyle="bold"
+              
+               />
+<TextView android:id="@+id/processesinfosizetext"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+                        />
+    
+<TextView android:id="@+id/processesinfodateheading"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:textColor="#FFFCC125"
+              android:textStyle="bold"
+              
+               />
+<TextView android:id="@+id/processesinfodatetext"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+                        />
+            
+    <TextView android:id="@+id/processesinfogap"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"              
+               />
+    <Button android:id="@+id/processgmapbutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="View map"
+            android:layout_marginTop="30dp"
+            android:layout_centerInParent="true" 
+            android:layout_gravity="center"
+            />
+    
+    
+</LinearLayout>
+</ScrollView>

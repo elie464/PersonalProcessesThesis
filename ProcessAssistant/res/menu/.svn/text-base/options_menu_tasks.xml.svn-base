@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/option_view"
+        android:icon="@android:drawable/ic_menu_view"
+        android:title="View">
+
+        <!-- "file" submenu -->
+        <menu android:checkableBehavior="single" >
+            <item
+                android:id="@+id/option_all"
+                android:title="Display All Tasks"/>
+            <item
+                android:id="@+id/option_valid"
+                android:title="Display Valid Tasks"/>
+            <item
+                android:id="@+id/option_validFuture"
+                android:title="Display Valid and Upcoming Tasks"/>
+        </menu>
+    </item>
+    <item
+        android:id="@+id/option_sort"
+        android:icon="@android:drawable/ic_menu_sort_by_size"
+        android:title="Sort">
+
+        <!-- "file" submenu -->
+        <menu android:checkableBehavior="single" >
+            <item
+                android:id="@+id/option_sort_location"
+                android:title="Sort by Location"/>
+            <item
+                android:id="@+id/option_sort_time"
+                android:title="Sort by Time"/>
+        </menu>
+    </item>
+    <item
+        android:id="@+id/option_settings"
+        android:icon="@android:drawable/ic_menu_manage"
+        android:title="Settings">
+        <item
+            android:id="@+id/option_filter"
+            android:icon="@android:drawable/ic_menu_zoom"
+            android:title="Filter">
+            <menu android:checkableBehavior="single" >
+                <item
+                    android:id="@+id/option_toggleInternet"
+                    android:title="Internet Valid"/>
+                <item
+                    android:id="@+id/option_toggleTime"
+                    android:title="Time Valid"/>
+                <item
+                    android:id="@+id/option_noFilter"
+                    android:title="No Filter"/>
+            </menu>
+        </item>
+    </item>
+
+</menu>

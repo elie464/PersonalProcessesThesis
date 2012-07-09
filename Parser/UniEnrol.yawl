@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<specificationSet xmlns="http://www.yawlfoundation.org/yawlschema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.2" xsi:schemaLocation="http://www.yawlfoundation.org/yawlschema http://www.yawlfoundation.org/yawlschema/YAWL_Schema2.2.xsd">
+  <specification uri="UniEnrol">
+    <metaData>
+      <creator>ernestlie</creator>
+      <description>No description has been given.</description>
+      <version>0.2</version>
+      <persistent>false</persistent>
+      <identifier>UID_44cdbd6a-30cb-41da-a5ac-045a532437b9</identifier>
+    </metaData>
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" />
+    <decomposition id="New_Net_1" isRootNet="true" xsi:type="NetFactsType">
+      <processControlElements>
+        <inputCondition id="InputCondition_1">
+          <flowsInto>
+            <nextElementRef id="Enrol_on_myUNSW_3" />
+          </flowsInto>
+        </inputCondition>
+        <task id="Enrol_on_myUNSW_3">
+          <name>Enrol on myUNSW</name>
+          <flowsInto>
+            <nextElementRef id="Collect_Student_Card_4" />
+          </flowsInto>
+          <flowsInto>
+            <nextElementRef id="Pay_Fees_7" />
+          </flowsInto>
+          <join code="xor" />
+          <split code="and" />
+        </task>
+        <task id="Pay_Fees_7">
+          <name>Pay Fees</name>
+          <flowsInto>
+            <nextElementRef id="OutputCondition_2" />
+          </flowsInto>
+          <join code="xor" />
+          <split code="and" />
+        </task>
+        <task id="Collect_Student_Card_4">
+          <name>Collect Student Card</name>
+          <documentation>-33.917224,151.230227, 1600</documentation>
+          <flowsInto>
+            <nextElementRef id="Sign_up_for_UniGym_membership_5" />
+            <predicate>true()</predicate>
+          </flowsInto>
+          <flowsInto>
+            <nextElementRef id="Sign_up_with_Arc_6" />
+            <predicate>true()</predicate>
+            <isDefaultFlow />
+          </flowsInto>
+          <join code="xor" />
+          <split code="or" />
+        </task>
+        <task id="Sign_up_with_Arc_6">
+          <name>Sign up with Arc</name>
+          <flowsInto>
+            <nextElementRef id="OutputCondition_2" />
+          </flowsInto>
+          <join code="xor" />
+          <split code="and" />
+        </task>
+        <task id="Sign_up_for_UniGym_membership_5">
+          <name>Sign up for UniGym membership</name>
+          <flowsInto>
+            <nextElementRef id="OutputCondition_2" />
+          </flowsInto>
+          <join code="xor" />
+          <split code="and" />
+        </task>
+        <outputCondition id="OutputCondition_2" />
+      </processControlElements>
+    </decomposition>
+  </specification>
+  <layout>
+    <locale language="en" country="US" />
+    <specification id="UniEnrol">
+      <size w="129" h="46" />
+      <net id="New_Net_1">
+        <bounds x="0" y="0" w="1097" h="542" />
+        <frame x="11" y="33" w="1101" h="546" />
+        <viewport x="0" y="0" w="1101" h="546" />
+        <vertex id="InputCondition_1">
+          <attributes>
+            <bounds x="36.0" y="276.0" w="32.0" h="32.0" />
+          </attributes>
+        </vertex>
+        <vertex id="OutputCondition_2">
+          <attributes>
+            <bounds x="1040.0" y="276.0" w="32.0" h="32.0" />
+          </attributes>
+        </vertex>
+        <container id="Sign_up_with_Arc_6">
+          <vertex>
+            <iconpath>/org/yawlfoundation/yawl/editor/resources/taskicons/Manual.png</iconpath>
+            <attributes>
+              <bounds x="476.0" y="236.0" w="32.0" h="32.0" />
+            </attributes>
+          </vertex>
+          <label>
+            <attributes>
+              <bounds x="444.0" y="268.0" w="97.0" h="41.0" />
+            </attributes>
+          </label>
+        </container>
+        <container id="Sign_up_for_UniGym_membership_5">
+          <vertex>
+            <iconpath>/org/yawlfoundation/yawl/editor/resources/taskicons/Manual.png</iconpath>
+            <attributes>
+              <bounds x="488.0" y="352.0" w="32.0" h="32.0" />
+            </attributes>
+          </vertex>
+          <label>
+            <attributes>
+              <bounds x="456.0" y="384.0" w="97.0" h="57.0" />
+            </attributes>
+          </label>
+        </container>
+        <container id="Collect_Student_Card_4">
+          <vertex>
+            <iconpath>/org/yawlfoundation/yawl/editor/resources/taskicons/Manual.png</iconpath>
+            <attributes>
+              <bounds x="340.0" y="276.0" w="32.0" h="32.0" />
+            </attributes>
+          </vertex>
+          <decorator type="OR_split">
+            <position>13</position>
+            <attributes>
+              <bounds x="371.0" y="276.0" w="11.0" h="32.0" />
+              <size w="11" h="32" />
+            </attributes>
+          </decorator>
+          <label>
+            <attributes>
+              <bounds x="312.0" y="308.0" w="96.0" h="38.0" />
+            </attributes>
+          </label>
+        </container>
+        <container id="Pay_Fees_7">
+          <vertex>
+            <iconpath>/org/yawlfoundation/yawl/editor/resources/taskicons/Manual.png</iconpath>
+            <attributes>
+              <bounds x="288.0" y="144.0" w="32.0" h="32.0" />
+            </attributes>
+          </vertex>
+          <label>
+            <attributes>
+              <bounds x="256.0" y="176.0" w="97.0" h="21.0" />
+            </attributes>
+          </label>
+        </container>
+        <container id="Enrol_on_myUNSW_3">
+          <vertex>
+            <iconpath>/org/yawlfoundation/yawl/editor/resources/taskicons/Manual.png</iconpath>
+            <attributes>
+              <bounds x="148.0" y="276.0" w="32.0" h="32.0" />
+            </attributes>
+          </vertex>
+          <label>
+            <attributes>
+              <bounds x="120.0" y="308.0" w="96.0" h="38.0" />
+            </attributes>
+          </label>
+          <decorator type="AND_split">
+            <position>13</position>
+            <attributes>
+              <bounds x="179.0" y="276.0" w="11.0" h="32.0" />
+              <size w="11" h="32" />
+            </attributes>
+          </decorator>
+        </container>
+        <flow source="InputCondition_1" target="Enrol_on_myUNSW_3">
+          <ports in="13" out="12" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+          </attributes>
+        </flow>
+        <flow source="Sign_up_for_UniGym_membership_5" target="OutputCondition_2">
+          <ports in="13" out="12" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+          </attributes>
+        </flow>
+        <flow source="Pay_Fees_7" target="OutputCondition_2">
+          <ports in="13" out="12" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+          </attributes>
+        </flow>
+        <flow source="Sign_up_with_Arc_6" target="OutputCondition_2">
+          <ports in="13" out="12" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+          </attributes>
+        </flow>
+        <flow source="Collect_Student_Card_4" target="Sign_up_for_UniGym_membership_5">
+          <ports in="2" out="12" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+          </attributes>
+        </flow>
+        <flow source="Collect_Student_Card_4" target="Sign_up_with_Arc_6">
+          <ports in="2" out="12" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+          </attributes>
+        </flow>
+        <flow source="Enrol_on_myUNSW_3" target="Pay_Fees_7">
+          <ports in="1" out="12" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+          </attributes>
+        </flow>
+        <flow source="Enrol_on_myUNSW_3" target="Collect_Student_Card_4">
+          <ports in="2" out="12" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+          </attributes>
+        </flow>
+      </net>
+    </specification>
+  </layout>
+</specificationSet>
+
+

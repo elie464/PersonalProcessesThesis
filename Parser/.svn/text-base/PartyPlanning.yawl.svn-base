@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<specificationSet xmlns="http://www.yawlfoundation.org/yawlschema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.2" xsi:schemaLocation="http://www.yawlfoundation.org/yawlschema http://www.yawlfoundation.org/yawlschema/YAWL_Schema2.2.xsd">
+  <specification uri="PartyPlanning">
+    <metaData>
+      <creator>prashanthanranjan</creator>
+      <description>No description has been given.</description>
+      <version>0.1</version>
+      <persistent>false</persistent>
+      <identifier>UID_6c8d7a8c-793e-4519-b013-cf17506e3099</identifier>
+    </metaData>
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" />
+    <decomposition id="New_Net_1" isRootNet="true" xsi:type="NetFactsType">
+      <processControlElements>
+        <inputCondition id="InputCondition_1">
+          <flowsInto>
+            <nextElementRef id="Create_Invite_List_3" />
+          </flowsInto>
+        </inputCondition>
+        <task id="Create_Invite_List_3">
+          <name>Create Invite List</name>
+          <documentation>des: Create your gustlist by checking your address book and social networking sites for your guests details| int:true</documentation>
+          <flowsInto>
+            <nextElementRef id="Mail_Invitations_7" />
+          </flowsInto>
+          <join code="xor" />
+          <split code="and" />
+        </task>
+        <task id="Mail_Invitations_7">
+          <name>Mail Invitations</name>
+          <documentation>des:Mail the invites from the post office| lon:151.207741| lat:-33.867866|stt:08-15|ent:07-30| dur:0.2</documentation>
+          <flowsInto>
+            <nextElementRef id="Purchase_drinks_5" />
+          </flowsInto>
+          <flowsInto>
+            <nextElementRef id="Purchase_decorations_4" />
+          </flowsInto>
+          <flowsInto>
+            <nextElementRef id="Purchase_food_6" />
+          </flowsInto>
+          <join code="xor" />
+          <split code="and" />
+        </task>
+        <task id="Purchase_food_6">
+          <name>Purchase food</name>
+          <documentation>des:Buy food for your party from the caterers| lon:151.063621| lat:-33.959304| stt:09-00|ent:17-00| dur:0.3</documentation>
+          <flowsInto>
+            <nextElementRef id="Set_up_venue_8" />
+          </flowsInto>
+          <join code="xor" />
+          <split code="and" />
+        </task>
+        <task id="Purchase_decorations_4">
+          <name>Purchase decorations</name>
+          <documentation>des:Purchase decorations for your party at the party supplies shop| lon:151.165255| lat:-33.88801| stt:09-00| ent:17-00| dur:0.5</documentation>
+          <flowsInto>
+            <nextElementRef id="Set_up_venue_8" />
+          </flowsInto>
+          <join code="xor" />
+          <split code="and" />
+        </task>
+        <task id="Purchase_drinks_5">
+          <name>Purchase drinks</name>
+          <documentation>des:Purchase alcoholic and non-alcoholic drinks for your party| lon:151.249766| lat:-33.892097| stt:08-30| ent:16-00| dur:0.4</documentation>
+          <flowsInto>
+            <nextElementRef id="Set_up_venue_8" />
+          </flowsInto>
+          <join code="xor" />
+          <split code="and" />
+        </task>
+        <task id="Set_up_venue_8">
+          <name>Set up venue</name>
+          <documentation>des: Set up the party venue for your party| lon:151.198107| lat:-33.8844|stt:14-00|ent:01-00| dur:1</documentation>
+          <flowsInto>
+            <nextElementRef id="Host_Party_9" />
+          </flowsInto>
+          <join code="and" />
+          <split code="and" />
+        </task>
+        <task id="Host_Party_9">
+          <name>Host Party</name>
+          <documentation>des: Host your party!| lon:151.198107| lat:-33.8844|stt:19-00|ent:02-00| dur:6</documentation>
+          <flowsInto>
+            <nextElementRef id="OutputCondition_2" />
+          </flowsInto>
+          <join code="xor" />
+          <split code="and" />
+        </task>
+        <outputCondition id="OutputCondition_2" />
+      </processControlElements>
+    </decomposition>
+  </specification>
+  <layout>
+    <locale language="en" country="US" />
+    <specification id="PartyPlanning">
+      <size w="129" h="46" />
+      <net id="New_Net_1">
+        <bounds x="0" y="0" w="1257" h="636" />
+        <frame x="11" y="33" w="1261" h="640" />
+        <viewport x="0" y="0" w="1261" h="640" />
+        <scale>0.990</scale>
+        <vertex id="InputCondition_1">
+          <attributes>
+            <bounds x="36.0" y="320.0" w="32.0" h="32.0" />
+          </attributes>
+        </vertex>
+        <vertex id="OutputCondition_2">
+          <attributes>
+            <bounds x="1200.0" y="320.0" w="32.0" h="32.0" />
+          </attributes>
+        </vertex>
+        <container id="Create_Invite_List_3">
+          <vertex>
+            <iconpath>/org/yawlfoundation/yawl/editor/resources/taskicons/Manual.png</iconpath>
+            <attributes>
+              <bounds x="136.0" y="312.0" w="32.0" h="32.0" />
+            </attributes>
+          </vertex>
+          <label>
+            <attributes>
+              <bounds x="104.0" y="348.0" w="97.0" h="41.0" />
+            </attributes>
+          </label>
+        </container>
+        <container id="Purchase_decorations_4">
+          <vertex>
+            <iconpath>/org/yawlfoundation/yawl/editor/resources/taskicons/Manual.png</iconpath>
+            <attributes>
+              <bounds x="416.0" y="188.0" w="32.0" h="32.0" />
+            </attributes>
+          </vertex>
+          <label>
+            <attributes>
+              <bounds x="384.0" y="220.0" w="97.0" h="41.0" />
+            </attributes>
+          </label>
+        </container>
+        <container id="Purchase_drinks_5">
+          <vertex>
+            <iconpath>/org/yawlfoundation/yawl/editor/resources/taskicons/Manual.png</iconpath>
+            <attributes>
+              <bounds x="420.0" y="412.0" w="32.0" h="32.0" />
+            </attributes>
+          </vertex>
+          <label>
+            <attributes>
+              <bounds x="388.0" y="444.0" w="96.0" h="38.0" />
+            </attributes>
+          </label>
+        </container>
+        <container id="Purchase_food_6">
+          <vertex>
+            <iconpath>/org/yawlfoundation/yawl/editor/resources/taskicons/Manual.png</iconpath>
+            <attributes>
+              <bounds x="412.0" y="312.0" w="32.0" h="32.0" />
+            </attributes>
+          </vertex>
+          <label>
+            <attributes>
+              <bounds x="380.0" y="344.0" w="97.0" h="41.0" />
+            </attributes>
+          </label>
+        </container>
+        <container id="Mail_Invitations_7">
+          <vertex>
+            <iconpath>/org/yawlfoundation/yawl/editor/resources/taskicons/Manual.png</iconpath>
+            <attributes>
+              <bounds x="276.0" y="320.0" w="32.0" h="32.0" />
+            </attributes>
+          </vertex>
+          <decorator type="AND_split">
+            <position>13</position>
+            <attributes>
+              <bounds x="307.0" y="320.0" w="11.0" h="32.0" />
+              <size w="11" h="32" />
+            </attributes>
+          </decorator>
+          <label>
+            <attributes>
+              <bounds x="249.0" y="352.0" w="96.0" h="38.0" />
+            </attributes>
+          </label>
+        </container>
+        <container id="Set_up_venue_8">
+          <vertex>
+            <iconpath>/org/yawlfoundation/yawl/editor/resources/taskicons/Manual.png</iconpath>
+            <attributes>
+              <bounds x="596.0" y="304.0" w="32.0" h="32.0" />
+            </attributes>
+          </vertex>
+          <decorator type="AND_join">
+            <position>12</position>
+            <attributes>
+              <bounds x="586.0" y="304.0" w="11.0" h="32.0" />
+              <size w="11" h="32" />
+            </attributes>
+          </decorator>
+          <label>
+            <attributes>
+              <bounds x="558.0" y="337.0" w="96.0" h="19.0" />
+            </attributes>
+          </label>
+        </container>
+        <container id="Host_Party_9">
+          <vertex>
+            <iconpath>/org/yawlfoundation/yawl/editor/resources/taskicons/Manual.png</iconpath>
+            <attributes>
+              <bounds x="748.0" y="292.0" w="32.0" h="32.0" />
+            </attributes>
+          </vertex>
+          <label>
+            <attributes>
+              <bounds x="716.0" y="324.0" w="97.0" h="21.0" />
+            </attributes>
+          </label>
+        </container>
+        <flow source="InputCondition_1" target="Create_Invite_List_3">
+          <ports in="13" out="12" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+          </attributes>
+        </flow>
+        <flow source="Create_Invite_List_3" target="Mail_Invitations_7">
+          <ports in="13" out="12" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+          </attributes>
+        </flow>
+        <flow source="Mail_Invitations_7" target="Purchase_decorations_4">
+          <ports in="2" out="12" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+          </attributes>
+        </flow>
+        <flow source="Mail_Invitations_7" target="Purchase_food_6">
+          <ports in="2" out="12" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+          </attributes>
+        </flow>
+        <flow source="Mail_Invitations_7" target="Purchase_drinks_5">
+          <ports in="3" out="12" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+          </attributes>
+        </flow>
+        <flow source="Purchase_decorations_4" target="Set_up_venue_8">
+          <ports in="13" out="2" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+          </attributes>
+        </flow>
+        <flow source="Purchase_food_6" target="Set_up_venue_8">
+          <ports in="13" out="3" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+          </attributes>
+        </flow>
+        <flow source="Purchase_drinks_5" target="Set_up_venue_8">
+          <ports in="13" out="3" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+          </attributes>
+        </flow>
+        <flow source="Set_up_venue_8" target="Host_Party_9">
+          <ports in="13" out="12" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+          </attributes>
+        </flow>
+        <flow source="Host_Party_9" target="OutputCondition_2">
+          <ports in="13" out="12" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+          </attributes>
+        </flow>
+      </net>
+    </specification>
+  </layout>
+</specificationSet>
+
+

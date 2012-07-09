@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <com.google.android.maps.MapView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/taskgmap_view"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:apiKey="0JsAyqDGBjcjnbi7b4AqezjgjryQSa4Bs_Ij5_A"   
+        android:clickable="true"
+        android:enabled="true" /><!-- Prash's Key 0Q9OgRibUoqMrbG1kTvXYGi8kf-5_g79VYfiYSw-->
+
+
+    <!-- android:apiKey="0JsAyqDGBjcjnbi7b4AqezjgjryQSa4Bs_Ij5_A" /> -->
+    <!-- Ernest's Key -->
+
+</RelativeLayout>

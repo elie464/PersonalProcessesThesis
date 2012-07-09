@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout 
+    	android:layout_width="fill_parent" android:layout_height="fill_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        >
+    <Button
+        android:id="@+id/tasks_confirmTaskButton"
+        android:layout_width="wrap_content"
+        android:layout_height="70dip"
+        android:visibility="gone"
+        android:gravity="center|left"
+        android:focusable="false"
+        android:focusableInTouchMode="false"/>
+	<CheckedTextView 
+	    android:id="@+id/tasks_taskCheckbox"
+	   	android:layout_width="fill_parent"
+	    android:layout_height="45dip"
+	    android:textColor="#FFFCC125"
+	    android:layout_toRightOf="@id/tasks_confirmTaskButton"
+	    android:checked="false"
+	    android:textStyle="bold"
+        android:checkMark="?android:attr/textCheckMark"
+        android:focusable="false"
+       	android:gravity="center|left"
+        android:focusableInTouchMode="false"/>
+	<TextView 
+	    android:id="@+id/tasks_processNameText"
+	   	android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	   	android:layout_below="@id/tasks_taskCheckbox"
+	    android:layout_toRightOf="@id/tasks_confirmTaskButton"
+	    android:focusable="false"
+        android:focusableInTouchMode="false"/>
+	<TextView 
+	    android:id="@+id/tasks_distance"
+	   	android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	   	android:layout_below="@id/tasks_processNameText"
+	    android:layout_toRightOf="@id/tasks_confirmTaskButton"
+	    android:focusable="false"
+        android:focusableInTouchMode="false"/>
+	<TextView 
+	    android:id="@+id/tasks_days"
+	   	android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	   	android:layout_below="@id/tasks_distance"
+	    android:layout_toRightOf="@id/tasks_confirmTaskButton"
+	    android:focusable="false"
+        android:focusableInTouchMode="false"/>
+    
+</RelativeLayout>

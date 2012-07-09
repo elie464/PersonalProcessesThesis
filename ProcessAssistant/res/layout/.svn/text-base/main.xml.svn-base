@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#000000"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/AppText"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Process Assistant"
+        android:textColor="#FFFCC125"
+        android:textSize="45dp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp" 
+        android:layout_marginBottom="30dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:background="#FFFFFF"/>
+
+    
+    <ImageButton
+        android:id="@+id/processImage"
+        android:layout_width="200dp"
+        android:layout_height="160dp"
+        android:src="@drawable/libraryicon" 
+        android:layout_below="@id/AppText"
+        android:layout_centerHorizontal="true" 
+        android:scaleType="fitCenter"/>
+
+    <TextView
+        android:id="@+id/processText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View Process List" 
+        android:textSize="25dp"
+        android:paddingTop="5dp"
+        android:layout_below="@id/processImage"
+        android:layout_centerHorizontal="true" 
+        android:textColor="#FFFCC125"/>
+
+    <ImageButton
+        android:id="@+id/downloadImage"
+        android:layout_width="200dp"
+        android:layout_height="160dp"
+        android:src="@drawable/downloadicon" 
+        android:layout_below="@id/processText"
+        android:layout_centerHorizontal="true" 
+        android:scaleType="fitCenter"/>
+
+    <TextView
+        android:id="@+id/downloadText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Download Processes" 
+        android:textSize="25dp"
+        android:paddingTop="5dp"
+        android:layout_below="@id/downloadImage"
+        android:layout_centerHorizontal="true" 
+        android:textColor="#FFFCC125"/>
+
+</RelativeLayout>

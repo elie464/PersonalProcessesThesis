@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<specificationSet xmlns="http://www.yawlfoundation.org/yawlschema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.2" xsi:schemaLocation="http://www.yawlfoundation.org/yawlschema http://www.yawlfoundation.org/yawlschema/YAWL_Schema2.2.xsd">
+  <specification uri="UniEnroll">
+    <metaData>
+      <creator>prashanthanranjan</creator>
+      <description>No description has been given.</description>
+      <version>0.6</version>
+      <persistent>false</persistent>
+      <identifier>UID_523ad4ca-fe15-4c19-8891-08a5cf6748ad</identifier>
+    </metaData>
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" />
+    <decomposition id="New_Net_1" isRootNet="true" xsi:type="NetFactsType">
+      <processControlElements>
+        <inputCondition id="InputCondition_1">
+          <flowsInto>
+            <nextElementRef id="Obtain_Login_from_IDM_9" />
+          </flowsInto>
+        </inputCondition>
+        <task id="Obtain_Login_from_IDM_9">
+          <name>Obtain Login from IDM</name>
+          <documentation>des: Obtain UNSW student ID and unipass/zPass from idm.unsw.edu.au |int:true</documentation>
+          <flowsInto>
+            <nextElementRef id="Accept_offer_3" />
+          </flowsInto>
+          <join code="xor" />
+          <split code="and" />
+        </task>
+        <task id="Accept_offer_3">
+          <name>Accept offer</name>
+          <documentation>des: Click on the Accept Online button on the MyUNSW main page at my.unsw.edu.au |int:true| dur: 0.15</documentation>
+          <flowsInto>
+            <nextElementRef id="Enter_details_in_MyUNSW_7" />
+          </flowsInto>
+          <join code="xor" />
+          <split code="and" />
+        </task>
+        <task id="Enter_details_in_MyUNSW_7">
+          <name>Enter details in MyUNSW</name>
+          <documentation>des: Enter personal and contact details into MyUNSW at my.unsw.edu.au |int:true|dur: 0.5</documentation>
+          <flowsInto>
+            <nextElementRef id="Submit_course_selection_4" />
+          </flowsInto>
+          <join code="xor" />
+          <split code="and" />
+        </task>
+        <task id="Submit_course_selection_4">
+          <name>Submit course selection</name>
+          <documentation>des: Select courses from courselist on myUNSW. Use handbook.unsw.edu.au for reference |int:true</documentation>
+          <flowsInto>
+            <nextElementRef id="Generate_timetable_8" />
+          </flowsInto>
+          <join code="xor" />
+          <split code="and" />
+        </task>
+        <task id="Generate_timetable_8">
+          <name>Generate timetable</name>
+          <documentation>des: Create class timetable on myUNSW. Use timetable.unsw.edu.au for reference  |int:true</documentation>
+          <flowsInto>
+            <nextElementRef id="Collect_Student_Card_6" />
+          </flowsInto>
+          <join code="xor" />
+          <split code="and" />
+        </task>
+        <task id="Collect_Student_Card_6">
+          <name>Collect Student Card</name>
+          <documentation>des:Collect your student card from FM Assist| lon:151.234138| lat:-33.917610| int: false| stt:08-00|ent:16-30| dur:0.25</documentation>
+          <flowsInto>
+            <nextElementRef id="Pay_at_cashier_13" />
+            <predicate ordering="1">true()</predicate>
+          </flowsInto>
+          <flowsInto>
+            <nextElementRef id="Organise_HECS_5" />
+            <isDefaultFlow />
+          </flowsInto>
+          <flowsInto>
+            <nextElementRef id="Pay_fees_online_12" />
+            <predicate ordering="0">true()</predicate>
+          </flowsInto>
+          <join code="xor" />
+          <split code="xor" />
+        </task>
+        <task id="Organise_HECS_5">
+          <name>Organise HECS</name>
+          <documentation>des: Organise HECS student lean for fees through myUNSW | int: true</documentation>
+          <flowsInto>
+            <nextElementRef id="Set_up_zMail_10" />
+          </flowsInto>
+          <join code="xor" />
+          <split code="and" />
+        </task>
+        <task id="Pay_fees_online_12">
+          <name>Pay fees online</name>
+          <documentation>des: Pay fees through MyUNSW through one of the provided online payment methods| int: true</documentation>
+          <flowsInto>
+            <nextElementRef id="Set_up_zMail_10" />
+          </flowsInto>
+          <join code="xor" />
+          <split code="and" />
+        </task>
+        <task id="Pay_at_cashier_13">
+          <name>Pay at cashier</name>
+          <documentation>des:Pay fees at the UNSW cashier in the chancellory building| lon:151.234101| lat:-33.916545| int: false| stt:08-00|ent:16-30| dur:0.15</documentation>
+          <flowsInto>
+            <nextElementRef id="Set_up_zMail_10" />
+          </flowsInto>
+          <join code="xor" />
+          <split code="and" />
+        </task>
+        <task id="Set_up_zMail_10">
+          <name>Set up zMail</name>
+          <documentation>des: Set up student email at zmail.unsw.edu.au| int: true</documentation>
+          <flowsInto>
+            <nextElementRef id="OutputCondition_2" />
+          </flowsInto>
+          <join code="xor" />
+          <split code="and" />
+        </task>
+        <outputCondition id="OutputCondition_2" />
+      </processControlElements>
+    </decomposition>
+  </specification>
+  <layout>
+    <locale language="en" country="US" />
+    <specification id="UniEnroll">
+      <size w="129" h="46" />
+      <net id="New_Net_1">
+        <bounds x="0" y="0" w="1257" h="636" />
+        <frame x="11" y="33" w="1261" h="640" />
+        <viewport x="0" y="0" w="1261" h="640" />
+        <scale>0.970</scale>
+        <vertex id="InputCondition_1">
+          <attributes>
+            <bounds x="36.0" y="320.0" w="32.0" h="32.0" />
+          </attributes>
+        </vertex>
+        <vertex id="OutputCondition_2">
+          <attributes>
+            <bounds x="1200.0" y="320.0" w="32.0" h="32.0" />
+          </attributes>
+        </vertex>
+        <container id="Collect_Student_Card_6">
+          <vertex>
+            <iconpath>/org/yawlfoundation/yawl/editor/resources/taskicons/Manual.png</iconpath>
+            <attributes>
+              <bounds x="732.0" y="320.0" w="32.0" h="32.0" />
+            </attributes>
+          </vertex>
+          <label>
+            <attributes>
+              <bounds x="704.0" y="352.0" w="97.0" h="41.0" />
+            </attributes>
+          </label>
+          <decorator type="XOR_split">
+            <position>13</position>
+            <attributes>
+              <bounds x="763.0" y="320.0" w="11.0" h="32.0" />
+              <size w="11" h="32" />
+            </attributes>
+          </decorator>
+        </container>
+        <container id="Organise_HECS_5">
+          <vertex>
+            <iconpath>/org/yawlfoundation/yawl/editor/resources/taskicons/Manual.png</iconpath>
+            <attributes>
+              <bounds x="896.0" y="432.0" w="32.0" h="32.0" />
+            </attributes>
+          </vertex>
+          <label>
+            <attributes>
+              <bounds x="864.0" y="464.0" w="97.0" h="41.0" />
+            </attributes>
+          </label>
+        </container>
+        <container id="Pay_at_cashier_13">
+          <vertex>
+            <iconpath>/org/yawlfoundation/yawl/editor/resources/taskicons/Manual.png</iconpath>
+            <attributes>
+              <bounds x="892.0" y="308.0" w="32.0" h="32.0" />
+            </attributes>
+          </vertex>
+          <label>
+            <attributes>
+              <bounds x="860.0" y="340.0" w="97.0" h="41.0" />
+            </attributes>
+          </label>
+        </container>
+        <container id="Submit_course_selection_4">
+          <vertex>
+            <iconpath>/org/yawlfoundation/yawl/editor/resources/taskicons/Manual.png</iconpath>
+            <attributes>
+              <bounds x="468.0" y="324.0" w="32.0" h="32.0" />
+            </attributes>
+          </vertex>
+          <label>
+            <attributes>
+              <bounds x="436.0" y="356.0" w="97.0" h="57.0" />
+            </attributes>
+          </label>
+        </container>
+        <container id="Pay_fees_online_12">
+          <vertex>
+            <iconpath>/org/yawlfoundation/yawl/editor/resources/taskicons/Manual.png</iconpath>
+            <attributes>
+              <bounds x="888.0" y="180.0" w="32.0" h="32.0" />
+            </attributes>
+          </vertex>
+          <label>
+            <attributes>
+              <bounds x="856.0" y="212.0" w="97.0" h="41.0" />
+            </attributes>
+          </label>
+        </container>
+        <container id="Generate_timetable_8">
+          <vertex>
+            <iconpath>/org/yawlfoundation/yawl/editor/resources/taskicons/Manual.png</iconpath>
+            <attributes>
+              <bounds x="592.0" y="320.0" w="32.0" h="32.0" />
+            </attributes>
+          </vertex>
+          <label>
+            <attributes>
+              <bounds x="560.0" y="352.0" w="97.0" h="41.0" />
+            </attributes>
+          </label>
+        </container>
+        <container id="Set_up_zMail_10">
+          <vertex>
+            <iconpath>/org/yawlfoundation/yawl/editor/resources/taskicons/Manual.png</iconpath>
+            <attributes>
+              <bounds x="1084.0" y="320.0" w="32.0" h="32.0" />
+            </attributes>
+          </vertex>
+          <label>
+            <attributes>
+              <bounds x="1048.0" y="352.0" w="96.0" h="19.0" />
+            </attributes>
+          </label>
+          <decorator type="XOR_join">
+            <position>12</position>
+            <attributes>
+              <bounds x="1074.0" y="320.0" w="11.0" h="32.0" />
+              <size w="11" h="32" />
+            </attributes>
+          </decorator>
+        </container>
+        <container id="Accept_offer_3">
+          <vertex>
+            <iconpath>/org/yawlfoundation/yawl/editor/resources/taskicons/Manual.png</iconpath>
+            <attributes>
+              <bounds x="260.0" y="320.0" w="32.0" h="32.0" />
+            </attributes>
+          </vertex>
+          <label>
+            <attributes>
+              <bounds x="228.0" y="352.0" w="97.0" h="21.0" />
+            </attributes>
+          </label>
+        </container>
+        <container id="Enter_details_in_MyUNSW_7">
+          <vertex>
+            <iconpath>/org/yawlfoundation/yawl/editor/resources/taskicons/Manual.png</iconpath>
+            <attributes>
+              <bounds x="364.0" y="324.0" w="32.0" h="32.0" />
+            </attributes>
+          </vertex>
+          <label>
+            <attributes>
+              <bounds x="332.0" y="356.0" w="97.0" h="41.0" />
+            </attributes>
+          </label>
+        </container>
+        <container id="Obtain_Login_from_IDM_9">
+          <vertex>
+            <iconpath>/org/yawlfoundation/yawl/editor/resources/taskicons/Manual.png</iconpath>
+            <attributes>
+              <bounds x="140.0" y="304.0" w="32.0" h="32.0" />
+            </attributes>
+          </vertex>
+          <label>
+            <attributes>
+              <bounds x="108.0" y="336.0" w="97.0" h="57.0" />
+            </attributes>
+          </label>
+        </container>
+        <flow source="InputCondition_1" target="Obtain_Login_from_IDM_9">
+          <ports in="13" out="12" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+            <points>
+              <value x="67.0" y="335.5" />
+              <value x="168.0" y="223.5" />
+            </points>
+          </attributes>
+        </flow>
+        <flow source="Set_up_zMail_10" target="OutputCondition_2">
+          <ports in="13" out="12" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+          </attributes>
+        </flow>
+        <flow source="Accept_offer_3" target="Enter_details_in_MyUNSW_7">
+          <ports in="13" out="12" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+            <points>
+              <value x="291.0" y="335.5" />
+              <value x="368.0" y="211.5" />
+            </points>
+          </attributes>
+        </flow>
+        <flow source="Collect_Student_Card_6" target="Pay_at_cashier_13">
+          <ports in="2" out="12" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+          </attributes>
+        </flow>
+        <flow source="Collect_Student_Card_6" target="Pay_fees_online_12">
+          <ports in="1" out="12" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+          </attributes>
+        </flow>
+        <flow source="Generate_timetable_8" target="Collect_Student_Card_6">
+          <ports in="13" out="12" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+          </attributes>
+        </flow>
+        <flow source="Organise_HECS_5" target="Set_up_zMail_10">
+          <ports in="13" out="3" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+          </attributes>
+        </flow>
+        <flow source="Submit_course_selection_4" target="Generate_timetable_8">
+          <ports in="13" out="12" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+            <points>
+              <value x="499.0" y="339.5" />
+              <value x="600.0" y="167.5" />
+            </points>
+          </attributes>
+        </flow>
+        <flow source="Enter_details_in_MyUNSW_7" target="Submit_course_selection_4">
+          <ports in="13" out="12" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+          </attributes>
+        </flow>
+        <flow source="Collect_Student_Card_6" target="Organise_HECS_5">
+          <ports in="3" out="12" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+          </attributes>
+        </flow>
+        <flow source="Pay_at_cashier_13" target="Set_up_zMail_10">
+          <ports in="13" out="3" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+          </attributes>
+        </flow>
+        <flow source="Obtain_Login_from_IDM_9" target="Accept_offer_3">
+          <ports in="13" out="12" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+          </attributes>
+        </flow>
+        <flow source="Pay_fees_online_12" target="Set_up_zMail_10">
+          <ports in="13" out="3" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+          </attributes>
+        </flow>
+      </net>
+    </specification>
+  </layout>
+</specificationSet>
+
+

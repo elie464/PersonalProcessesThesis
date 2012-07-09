@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<specificationSet xmlns="http://www.yawlfoundation.org/yawlschema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.2" xsi:schemaLocation="http://www.yawlfoundation.org/yawlschema http://www.yawlfoundation.org/yawlschema/YAWL_Schema2.2.xsd">
+  <specification uri="SetupARCclub">
+    <metaData>
+      <creator>prashanthanranjan</creator>
+      <description>No description has been given.</description>
+      <version>0.3</version>
+      <persistent>false</persistent>
+      <identifier>UID_503a5bab-601d-463d-a84e-b092c4f41e04</identifier>
+    </metaData>
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" />
+    <decomposition id="New_Net_1" isRootNet="true" xsi:type="NetFactsType">
+      <processControlElements>
+        <inputCondition id="InputCondition_1">
+          <flowsInto>
+            <nextElementRef id="Decide_on_club_chair_committee_3" />
+          </flowsInto>
+          <flowsInto>
+            <nextElementRef id="Check_if_similar_club_exists_6" />
+          </flowsInto>
+        </inputCondition>
+        <task id="Check_if_similar_club_exists_6">
+          <name>Check if similar club exists</name>
+          <documentation>des: Before starting a club, make sure the club doesn't already exist! Visit this webpage - http://www.arc.unsw.edu.au/get-involved/clubs-and-societies for more information| int:true</documentation>
+          <flowsInto>
+            <nextElementRef id="Obtain_forms_from_ARC_7" />
+          </flowsInto>
+          <join code="xor" />
+          <split code="and" />
+        </task>
+        <task id="Decide_on_club_chair_committee_3">
+          <name>Decide on club chair committee</name>
+          <documentation>des:Decide on who is going to run the club and any other necessary members.</documentation>
+          <flowsInto>
+            <nextElementRef id="Obtain_forms_from_ARC_7" />
+          </flowsInto>
+          <join code="xor" />
+          <split code="and" />
+        </task>
+        <task id="Obtain_forms_from_ARC_7">
+          <name>Obtain forms from ARC</name>
+          <documentation>des:Obtain forms to set up a club at the ARC office near Blockhouse. ARC office opens between 8am-4pm Mon-Fri.| lon:151.226452| lat:-33.916832| int:false| stt:08-00| ent:16-00| dur: 0.25</documentation>
+          <flowsInto>
+            <nextElementRef id="Complete_Forms_13" />
+          </flowsInto>
+          <join code="and" />
+          <split code="and" />
+        </task>
+        <task id="Complete_Forms_13">
+          <name>Complete Forms</name>
+          <documentation>des: Complete the given forms. You will need your bank details, details of club members, minutes and agenda at the very least. Make sure question is answered before submitting or call ARC at 9385 9840 for any enquiries.</documentation>
+          <flowsInto>
+            <nextElementRef id="Submit_forms_to_ARC_8" />
+          </flowsInto>
+          <join code="xor" />
+          <split code="and" />
+        </task>
+        <task id="Submit_forms_to_ARC_8">
+          <name>Submit forms to ARC</name>
+          <documentation>des: Submit the new club application to ARC at the ARC office building near blockhouse. Please ensure everything is completed before submitting or it will not be accepted.|lon:151.226452| lat:-33.916832| int:false| stt:08-00| ent:16-00| dur: 0.25</documentation>
+          <flowsInto>
+            <nextElementRef id="Gather_members_9" />
+          </flowsInto>
+          <join code="xor" />
+          <split code="and" />
+        </task>
+        <task id="Gather_members_9">
+          <name>Gather members</name>
+          <documentation>des: You need at least 7 members to start a club, so gather your friends to join your club. 15+ members becomes a regular sized club and you get even more benefits from ARC!</documentation>
+          <flowsInto>
+            <nextElementRef id="Collect_membership_fee_10" />
+          </flowsInto>
+          <join code="xor" />
+          <split code="and" />
+        </task>
+        <task id="Collect_membership_fee_10">
+          <name>Collect membership fee</name>
+          <documentation>des:Collect the membership fee from your members and submit to ARC online |int:true</documentation>
+          <flowsInto>
+            <nextElementRef id="Receive_ARC_Grant_11" />
+          </flowsInto>
+          <join code="xor" />
+          <split code="and" />
+        </task>
+        <task id="Receive_ARC_Grant_11">
+          <name>Receive ARC Grant</name>
+          <documentation>des: After handing over all the goods, we'll give you the grant! Now start doing stuff! |lon:151.226452| lat:-33.916832| int:false| stt:08-00| ent:16-00| dur: 0.25</documentation>
+          <flowsInto>
+            <nextElementRef id="OutputCondition_2" />
+          </flowsInto>
+          <join code="xor" />
+          <split code="and" />
+        </task>
+        <outputCondition id="OutputCondition_2" />
+      </processControlElements>
+    </decomposition>
+  </specification>
+  <layout>
+    <locale language="en" country="US" />
+    <specification id="SetupARCclub">
+      <size w="129" h="46" />
+      <net id="New_Net_1">
+        <bounds x="69" y="35" w="1257" h="636" />
+        <frame x="11" y="33" w="1261" h="640" />
+        <viewport x="0" y="0" w="1261" h="640" />
+        <scale>0.890</scale>
+        <vertex id="InputCondition_1">
+          <attributes>
+            <bounds x="36.0" y="320.0" w="32.0" h="32.0" />
+          </attributes>
+        </vertex>
+        <vertex id="OutputCondition_2">
+          <attributes>
+            <bounds x="1200.0" y="320.0" w="32.0" h="32.0" />
+          </attributes>
+        </vertex>
+        <container id="Gather_members_9">
+          <vertex>
+            <attributes>
+              <bounds x="712.0" y="324.0" w="32.0" h="32.0" />
+            </attributes>
+          </vertex>
+          <label>
+            <attributes>
+              <bounds x="680.0" y="356.0" w="97.0" h="41.0" />
+            </attributes>
+          </label>
+        </container>
+        <container id="Submit_forms_to_ARC_8">
+          <vertex>
+            <attributes>
+              <bounds x="592.1" y="196.7" w="32.0" h="32.0" />
+            </attributes>
+          </vertex>
+          <label>
+            <attributes>
+              <bounds x="561.0" y="227.0" w="97.0" h="59.0" />
+            </attributes>
+          </label>
+        </container>
+        <container id="Decide_on_club_chair_committee_3">
+          <vertex>
+            <iconpath>/org/yawlfoundation/yawl/editor/resources/taskicons/Manual.png</iconpath>
+            <attributes>
+              <bounds x="180.8" y="357.1" w="32.0" h="32.0" />
+            </attributes>
+          </vertex>
+          <label>
+            <attributes>
+              <bounds x="146.0" y="402.0" w="97.0" h="58.0" />
+            </attributes>
+          </label>
+        </container>
+        <container id="Check_if_similar_club_exists_6">
+          <vertex>
+            <attributes>
+              <bounds x="186.7" y="211.7" w="32.0" h="32.0" />
+            </attributes>
+          </vertex>
+          <label>
+            <attributes>
+              <bounds x="155.0" y="243.0" w="99.0" h="58.0" />
+            </attributes>
+          </label>
+        </container>
+        <container id="Collect_membership_fee_10">
+          <vertex>
+            <attributes>
+              <bounds x="828.0" y="324.0" w="32.0" h="32.0" />
+            </attributes>
+          </vertex>
+          <label>
+            <attributes>
+              <bounds x="796.0" y="356.0" w="97.0" h="57.0" />
+            </attributes>
+          </label>
+        </container>
+        <container id="Obtain_forms_from_ARC_7">
+          <vertex>
+            <attributes>
+              <bounds x="340.3" y="316.4" w="32.0" h="32.0" />
+            </attributes>
+          </vertex>
+          <label>
+            <attributes>
+              <bounds x="304.0" y="351.0" w="99.0" h="58.0" />
+            </attributes>
+          </label>
+          <decorator type="AND_join">
+            <position>12</position>
+            <attributes>
+              <bounds x="330.3" y="316.4" w="11.0" h="32.0" />
+              <size w="11" h="32" />
+            </attributes>
+          </decorator>
+        </container>
+        <container id="Receive_ARC_Grant_11">
+          <vertex>
+            <attributes>
+              <bounds x="940.0" y="332.0" w="32.0" h="32.0" />
+            </attributes>
+          </vertex>
+          <label>
+            <attributes>
+              <bounds x="908.0" y="364.0" w="97.0" h="41.0" />
+            </attributes>
+          </label>
+        </container>
+        <container id="Complete_Forms_13">
+          <vertex>
+            <attributes>
+              <bounds x="432.4" y="215.9" w="32.0" h="32.0" />
+            </attributes>
+          </vertex>
+          <label>
+            <attributes>
+              <bounds x="399.0" y="248.0" w="97.0" h="39.0" />
+            </attributes>
+          </label>
+        </container>
+        <flow source="InputCondition_1" target="Check_if_similar_club_exists_6">
+          <ports in="13" out="12" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+            <points>
+              <value x="67.0" y="335.5" />
+              <value x="323.5" y="151.6" />
+            </points>
+          </attributes>
+        </flow>
+        <flow source="Receive_ARC_Grant_11" target="OutputCondition_2">
+          <ports in="13" out="12" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+          </attributes>
+        </flow>
+        <flow source="InputCondition_1" target="Decide_on_club_chair_committee_3">
+          <ports in="13" out="12" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+          </attributes>
+        </flow>
+        <flow source="Complete_Forms_13" target="Submit_forms_to_ARC_8">
+          <ports in="13" out="12" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+          </attributes>
+        </flow>
+        <flow source="Obtain_forms_from_ARC_7" target="Complete_Forms_13">
+          <ports in="13" out="12" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+          </attributes>
+        </flow>
+        <flow source="Submit_forms_to_ARC_8" target="Gather_members_9">
+          <ports in="13" out="12" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+          </attributes>
+        </flow>
+        <flow source="Check_if_similar_club_exists_6" target="Obtain_forms_from_ARC_7">
+          <ports in="13" out="2" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+          </attributes>
+        </flow>
+        <flow source="Gather_members_9" target="Collect_membership_fee_10">
+          <ports in="13" out="12" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+          </attributes>
+        </flow>
+        <flow source="Decide_on_club_chair_committee_3" target="Obtain_forms_from_ARC_7">
+          <ports in="13" out="3" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+          </attributes>
+        </flow>
+        <flow source="Collect_membership_fee_10" target="Receive_ARC_Grant_11">
+          <ports in="13" out="12" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+          </attributes>
+        </flow>
+      </net>
+    </specification>
+  </layout>
+</specificationSet>
+
+

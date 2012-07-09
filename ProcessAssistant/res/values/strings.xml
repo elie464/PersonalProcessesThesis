@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello Please click a button</string>
+    <string name="app_name">Thesis</string>
+    
+    <string-array name="main_menu_array">
+        <item>View Process Library</item>
+        <item>Download Processes</item>
+    </string-array>
+
+</resources>

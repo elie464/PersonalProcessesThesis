@@ -1,0 +1,34 @@
+10
+
+dir
+402
+svn://soc.cse.unsw.edu.au/snp/trunk/AnalyticsService/WebContent
+svn://soc.cse.unsw.edu.au/snp
+
+
+
+2012-04-29T07:26:09.571436Z
+366
+prash
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+c7e8bdf8-38af-4bcd-876f-f849a661f01d
+
+META-INF
+dir
+
+WEB-INF
+dir
+

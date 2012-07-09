@@ -1,0 +1,526 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<specificationSet xmlns="http://www.yawlfoundation.org/yawlschema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.2" xsi:schemaLocation="http://www.yawlfoundation.org/yawlschema http://www.yawlfoundation.org/yawlschema/YAWL_Schema2.2.xsd">
+  <specification uri="woolworthsRetailJobInterview">
+    <metaData>
+      <creator>prashanthanranjan</creator>
+      <description>No description has been given.</description>
+      <version>0.2</version>
+      <persistent>false</persistent>
+      <identifier>UID_02260aaa-9f95-436f-9d60-c75dfd1349ea</identifier>
+    </metaData>
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" />
+    <decomposition id="New_Net_1" isRootNet="true" xsi:type="NetFactsType">
+      <processControlElements>
+        <inputCondition id="InputCondition_1">
+          <flowsInto>
+            <nextElementRef id="Submit_Application_3" />
+          </flowsInto>
+        </inputCondition>
+        <task id="Submit_Application_3">
+          <name>Submit Application</name>
+          <documentation>des:Submit application at http://www.wowcareers.com.au/wowcareers/woolworths/home/| int: true| std:1-03-2012 |end:1-06-2012|dur:1.5</documentation>
+          <flowsInto>
+            <nextElementRef id="Application_Declined_4" />
+            <isDefaultFlow />
+          </flowsInto>
+          <flowsInto>
+            <nextElementRef id="Phone_Interview_5" />
+            <predicate ordering="0">true()</predicate>
+          </flowsInto>
+          <join code="xor" />
+          <split code="xor" />
+        </task>
+        <task id="Application_Declined_4">
+          <name>Application Declined</name>
+          <documentation>des:Unsuccessful Application| std:01-03-2012 |end:31-06-2012|</documentation>
+          <flowsInto>
+            <nextElementRef id="OutputCondition_2" />
+          </flowsInto>
+          <join code="xor" />
+          <split code="and" />
+        </task>
+        <task id="Phone_Interview_5">
+          <name>Phone Interview</name>
+          <documentation>des: Participate in phone interview with recruitment personnel|std:01-03-2012| end: 01-06-2012| dur:0.5</documentation>
+          <flowsInto>
+            <nextElementRef id="Conduct_Research_9" />
+            <predicate ordering="0">true()</predicate>
+          </flowsInto>
+          <flowsInto>
+            <nextElementRef id="Application_Declined_4" />
+            <isDefaultFlow />
+          </flowsInto>
+          <join code="xor" />
+          <split code="xor" />
+        </task>
+        <task id="Conduct_Research_9">
+          <name>Conduct Research</name>
+          <documentation>des:Prepare for interview by conducting research on the company|int: true| std:01-03-2012| end:01-06-2012| dur: 1</documentation>
+          <flowsInto>
+            <nextElementRef id="Get_Orignal_Academic_Transcript_6" />
+          </flowsInto>
+          <flowsInto>
+            <nextElementRef id="Get_Referees_7" />
+          </flowsInto>
+          <join code="xor" />
+          <split code="and" />
+        </task>
+        <task id="Get_Referees_7">
+          <name>Get Referees</name>
+          <documentation>des:Obtain referees and contact details| std:01-03-2012 |end:01-06-2012|</documentation>
+          <flowsInto>
+            <nextElementRef id="HR_Interview_8" />
+          </flowsInto>
+          <join code="xor" />
+          <split code="and" />
+        </task>
+        <task id="Get_Orignal_Academic_Transcript_6">
+          <name>Get Orignal Academic Transcript</name>
+          <documentation>des:Obain Orginal Academic Transcript from Student Office| lon:151.233910| lat:-33.916523| std:01-03-2012 | stt:09-00|end:1-06-2012| ent:17-00| dur:0.2</documentation>
+          <flowsInto>
+            <nextElementRef id="HR_Interview_8" />
+          </flowsInto>
+          <join code="xor" />
+          <split code="and" />
+        </task>
+        <task id="HR_Interview_8">
+          <name>HR Interview</name>
+          <documentation>des:Attend HR interview at Woolworths| lon:151.20721| lat:-33.873199| std:01-03-2012 | stt:09-00|end:01-06-2012| ent:17-00| dur:1.5</documentation>
+          <flowsInto>
+            <nextElementRef id="Application_Declined_4" />
+            <predicate ordering="0">true()</predicate>
+          </flowsInto>
+          <flowsInto>
+            <nextElementRef id="Assessment_Centre_11" />
+            <isDefaultFlow />
+          </flowsInto>
+          <join code="and" />
+          <split code="xor" />
+        </task>
+        <task id="Assessment_Centre_11">
+          <name>Assessment Centre</name>
+          <documentation>des:Attend Assessment Centre at Woolworths Business Park| lon:150.950668| lat:-33.736738| std:01-03-2012 | stt:13-00|end:01-06-2012| ent:17-00| dur:2</documentation>
+          <flowsInto>
+            <nextElementRef id="Application_Declined_4" />
+            <predicate ordering="0">true()</predicate>
+          </flowsInto>
+          <flowsInto>
+            <nextElementRef id="One_on_one_interview_12" />
+            <isDefaultFlow />
+          </flowsInto>
+          <join code="xor" />
+          <split code="xor" />
+        </task>
+        <task id="One_on_one_interview_12">
+          <name>One on one interview</name>
+          <documentation>des:Attend interview with senior manager| lon:151.201682| lat:-33.82755| std:01-03-2012 | stt:10-00|end:01-06-2012| ent:16-00| dur:1</documentation>
+          <flowsInto>
+            <nextElementRef id="Application_Declined_4" />
+            <isDefaultFlow />
+          </flowsInto>
+          <flowsInto>
+            <nextElementRef id="Receive_Offer_14" />
+            <predicate ordering="0">true()</predicate>
+          </flowsInto>
+          <join code="xor" />
+          <split code="xor" />
+        </task>
+        <task id="Receive_Offer_14">
+          <name>Receive Offer</name>
+          <documentation>des:Receive Offer|int: true| std:01-03-2012 |end:30-06-2012|</documentation>
+          <flowsInto>
+            <nextElementRef id="Accept_Offer_15" />
+            <predicate ordering="0">true()</predicate>
+          </flowsInto>
+          <flowsInto>
+            <nextElementRef id="Decline_Offer_16" />
+            <isDefaultFlow />
+          </flowsInto>
+          <join code="xor" />
+          <split code="xor" />
+        </task>
+        <task id="Accept_Offer_15">
+          <name>Accept Offer</name>
+          <documentation>des:Accept Offer online|int: true| std:01-03-2012 |end:31-07-2012|</documentation>
+          <flowsInto>
+            <nextElementRef id="OutputCondition_2" />
+          </flowsInto>
+          <join code="xor" />
+          <split code="and" />
+        </task>
+        <task id="Decline_Offer_16">
+          <name>Decline Offer</name>
+          <documentation>des:Decline Offer online|int: true| std:01-03-2012 |end:31-07-2012|</documentation>
+          <flowsInto>
+            <nextElementRef id="OutputCondition_2" />
+          </flowsInto>
+          <join code="xor" />
+          <split code="and" />
+        </task>
+        <outputCondition id="OutputCondition_2" />
+      </processControlElements>
+    </decomposition>
+  </specification>
+  <layout>
+    <locale language="en" country="US" />
+    <specification id="woolworthsRetailJobInterview">
+      <size w="129" h="46" />
+      <net id="New_Net_1">
+        <bounds x="0" y="0" w="1257" h="636" />
+        <frame x="11" y="33" w="1261" h="640" />
+        <viewport x="0" y="0" w="1261" h="640" />
+        <vertex id="InputCondition_1">
+          <attributes>
+            <bounds x="16.0" y="320.0" w="32.0" h="32.0" />
+          </attributes>
+        </vertex>
+        <vertex id="OutputCondition_2">
+          <attributes>
+            <bounds x="1200.0" y="320.0" w="32.0" h="32.0" />
+          </attributes>
+        </vertex>
+        <container id="Submit_Application_3">
+          <vertex>
+            <attributes>
+              <bounds x="88.0" y="372.0" w="32.0" h="32.0" />
+            </attributes>
+          </vertex>
+          <decorator type="XOR_split">
+            <position>13</position>
+            <attributes>
+              <bounds x="119.0" y="372.0" w="11.0" h="32.0" />
+              <size w="11" h="32" />
+            </attributes>
+          </decorator>
+          <label>
+            <attributes>
+              <bounds x="60.0" y="404.0" w="96.0" h="38.0" />
+            </attributes>
+          </label>
+        </container>
+        <container id="Application_Declined_4">
+          <vertex>
+            <attributes>
+              <bounds x="1076.0" y="8.0" w="32.0" h="32.0" />
+            </attributes>
+          </vertex>
+          <decorator type="XOR_join">
+            <position>12</position>
+            <attributes>
+              <bounds x="1066.0" y="8.0" w="11.0" h="32.0" />
+              <size w="11" h="32" />
+            </attributes>
+          </decorator>
+          <label>
+            <attributes>
+              <bounds x="1040.0" y="40.0" w="97.0" h="41.0" />
+            </attributes>
+          </label>
+        </container>
+        <container id="Phone_Interview_5">
+          <vertex>
+            <attributes>
+              <bounds x="200.0" y="368.0" w="32.0" h="32.0" />
+            </attributes>
+          </vertex>
+          <decorator type="XOR_split">
+            <position>13</position>
+            <attributes>
+              <bounds x="231.0" y="368.0" w="11.0" h="32.0" />
+              <size w="11" h="32" />
+            </attributes>
+          </decorator>
+          <label>
+            <attributes>
+              <bounds x="172.0" y="400.0" w="97.0" h="41.0" />
+            </attributes>
+          </label>
+        </container>
+        <container id="Get_Orignal_Academic_Transcript_6">
+          <vertex>
+            <attributes>
+              <bounds x="456.0" y="400.0" w="32.0" h="32.0" />
+            </attributes>
+          </vertex>
+          <label>
+            <attributes>
+              <bounds x="424.0" y="432.0" w="97.0" h="57.0" />
+            </attributes>
+          </label>
+        </container>
+        <container id="Get_Referees_7">
+          <vertex>
+            <attributes>
+              <bounds x="456.0" y="304.0" w="32.0" h="32.0" />
+            </attributes>
+          </vertex>
+          <label>
+            <attributes>
+              <bounds x="424.0" y="336.0" w="97.0" h="21.0" />
+            </attributes>
+          </label>
+        </container>
+        <container id="HR_Interview_8">
+          <vertex>
+            <attributes>
+              <bounds x="564.0" y="352.0" w="32.0" h="32.0" />
+            </attributes>
+          </vertex>
+          <decorator type="AND_join">
+            <position>12</position>
+            <attributes>
+              <bounds x="554.0" y="352.0" w="11.0" h="32.0" />
+              <size w="11" h="32" />
+            </attributes>
+          </decorator>
+          <decorator type="XOR_split">
+            <position>13</position>
+            <attributes>
+              <bounds x="595.0" y="352.0" w="11.0" h="32.0" />
+              <size w="11" h="32" />
+            </attributes>
+          </decorator>
+          <label>
+            <attributes>
+              <bounds x="532.0" y="384.0" w="97.0" h="21.0" />
+            </attributes>
+          </label>
+        </container>
+        <flow source="Submit_Application_3" target="Phone_Interview_5">
+          <ports in="2" out="12" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+          </attributes>
+        </flow>
+        <flow source="Conduct_Research_9" target="Get_Orignal_Academic_Transcript_6">
+          <ports in="3" out="12" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+            <points>
+              <value x="433.0" y="375.3" />
+              <value x="432.0" y="247.5" />
+            </points>
+          </attributes>
+        </flow>
+        <flow source="Conduct_Research_9" target="Get_Referees_7">
+          <ports in="2" out="12" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+            <points>
+              <value x="423.0" y="367.5" />
+              <value x="440.0" y="415.5" />
+            </points>
+          </attributes>
+        </flow>
+        <flow source="Get_Orignal_Academic_Transcript_6" target="HR_Interview_8">
+          <ports in="13" out="3" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+          </attributes>
+        </flow>
+        <flow source="Get_Referees_7" target="HR_Interview_8">
+          <ports in="13" out="3" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+          </attributes>
+        </flow>
+        <flow source="Submit_Application_3" target="Application_Declined_4">
+          <ports in="3" out="2" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+          </attributes>
+        </flow>
+        <container id="Conduct_Research_9">
+          <vertex>
+            <attributes>
+              <bounds x="344.0" y="372.0" w="32.0" h="32.0" />
+            </attributes>
+          </vertex>
+          <decorator type="AND_split">
+            <position>13</position>
+            <attributes>
+              <bounds x="375.0" y="372.0" w="11.0" h="32.0" />
+              <size w="11" h="32" />
+            </attributes>
+          </decorator>
+          <label>
+            <attributes>
+              <bounds x="316.0" y="404.0" w="97.0" h="41.0" />
+            </attributes>
+          </label>
+        </container>
+        <flow source="Phone_Interview_5" target="Conduct_Research_9">
+          <ports in="3" out="12" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+          </attributes>
+        </flow>
+        <flow source="Phone_Interview_5" target="Application_Declined_4">
+          <ports in="4" out="2" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+          </attributes>
+        </flow>
+        <flow source="HR_Interview_8" target="Application_Declined_4">
+          <ports in="2" out="2" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+          </attributes>
+        </flow>
+        <flow source="HR_Interview_8" target="Assessment_Centre_11">
+          <ports in="3" out="12" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+          </attributes>
+        </flow>
+        <flow source="Application_Declined_4" target="OutputCondition_2">
+          <ports in="13" out="12" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+            <points>
+              <value x="527.0" y="507.5" />
+              <value x="1200.0" y="335.5" />
+            </points>
+          </attributes>
+        </flow>
+        <container id="Assessment_Centre_11">
+          <vertex>
+            <attributes>
+              <bounds x="688.0" y="352.0" w="32.0" h="32.0" />
+            </attributes>
+          </vertex>
+          <decorator type="XOR_split">
+            <position>13</position>
+            <attributes>
+              <bounds x="719.0" y="352.0" w="11.0" h="32.0" />
+              <size w="11" h="32" />
+            </attributes>
+          </decorator>
+          <label>
+            <attributes>
+              <bounds x="660.0" y="384.0" w="97.0" h="41.0" />
+            </attributes>
+          </label>
+        </container>
+        <flow source="Assessment_Centre_11" target="Application_Declined_4">
+          <ports in="3" out="2" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+          </attributes>
+        </flow>
+        <container id="One_on_one_interview_12">
+          <vertex>
+            <attributes>
+              <bounds x="780.0" y="352.0" w="32.0" h="32.0" />
+            </attributes>
+          </vertex>
+          <decorator type="XOR_split">
+            <position>13</position>
+            <attributes>
+              <bounds x="811.0" y="352.0" w="11.0" h="32.0" />
+              <size w="11" h="32" />
+            </attributes>
+          </decorator>
+          <label>
+            <attributes>
+              <bounds x="752.0" y="384.0" w="97.0" h="41.0" />
+            </attributes>
+          </label>
+        </container>
+        <flow source="Assessment_Centre_11" target="One_on_one_interview_12">
+          <ports in="2" out="12" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+          </attributes>
+        </flow>
+        <flow source="InputCondition_1" target="Submit_Application_3">
+          <ports in="13" out="12" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+          </attributes>
+        </flow>
+        <flow source="One_on_one_interview_12" target="Application_Declined_4">
+          <ports in="3" out="2" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+          </attributes>
+        </flow>
+        <container id="Receive_Offer_14">
+          <vertex>
+            <attributes>
+              <bounds x="956.0" y="356.0" w="32.0" h="32.0" />
+            </attributes>
+          </vertex>
+          <decorator type="XOR_split">
+            <position>13</position>
+            <attributes>
+              <bounds x="987.0" y="356.0" w="11.0" h="32.0" />
+              <size w="11" h="32" />
+            </attributes>
+          </decorator>
+          <label>
+            <attributes>
+              <bounds x="928.0" y="388.0" w="97.0" h="21.0" />
+            </attributes>
+          </label>
+        </container>
+        <container id="Accept_Offer_15">
+          <vertex>
+            <attributes>
+              <bounds x="1056.0" y="296.0" w="32.0" h="32.0" />
+            </attributes>
+          </vertex>
+          <label>
+            <attributes>
+              <bounds x="1024.0" y="328.0" w="97.0" h="21.0" />
+            </attributes>
+          </label>
+        </container>
+        <container id="Decline_Offer_16">
+          <vertex>
+            <attributes>
+              <bounds x="1068.0" y="432.0" w="32.0" h="32.0" />
+            </attributes>
+          </vertex>
+          <label>
+            <attributes>
+              <bounds x="1036.0" y="464.0" w="97.0" h="21.0" />
+            </attributes>
+          </label>
+        </container>
+        <flow source="One_on_one_interview_12" target="Receive_Offer_14">
+          <ports in="2" out="12" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+          </attributes>
+        </flow>
+        <flow source="Receive_Offer_14" target="Accept_Offer_15">
+          <ports in="2" out="12" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+          </attributes>
+        </flow>
+        <flow source="Receive_Offer_14" target="Decline_Offer_16">
+          <ports in="3" out="12" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+          </attributes>
+        </flow>
+        <flow source="Accept_Offer_15" target="OutputCondition_2">
+          <ports in="13" out="12" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+          </attributes>
+        </flow>
+        <flow source="Decline_Offer_16" target="OutputCondition_2">
+          <ports in="13" out="12" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+          </attributes>
+        </flow>
+      </net>
+    </specification>
+  </layout>
+</specificationSet>
+
+

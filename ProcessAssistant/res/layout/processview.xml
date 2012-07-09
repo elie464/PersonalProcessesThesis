@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView 
+xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/processViewScroll"
+
+
+>
+<LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+<TextView android:id="@+id/processviewnameheading"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:textColor="#FFFCC125"
+              android:textStyle="bold"
+              
+               />
+<TextView android:id="@+id/processviewnametext"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+                        /> 
+                        
+<TextView android:id="@+id/processviewauthorheading"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:textColor="#FFFCC125"
+              android:textStyle="bold"
+              
+               />
+<TextView android:id="@+id/processviewauthortext"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+                        />                         
+<TextView android:id="@+id/processviewdescriptionheading"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:textColor="#FFFCC125"
+              android:textStyle="bold"
+              
+               />
+<TextView android:id="@+id/processviewdescriptiontext"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+                        /> 
+
+<TextView android:id="@+id/processviewdateheading"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:textColor="#FFFCC125"
+              android:textStyle="bold"
+              
+               />
+<TextView android:id="@+id/processviewdatetext"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+                        /> 
+
+	<TextView
+        android:id="@+id/averageratingText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Average Rating"
+        android:textColor="#FFFCC125"
+              android:textStyle="bold"/>
+	
+	<RatingBar
+        android:id="@+id/averagerating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:numStars="5"
+        android:stepSize="1.0"
+        android:rating="0.0"
+        android:isIndicator="true" />
+	
+    <Button android:id="@+id/dloadbutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Download Process"
+            android:layout_centerInParent="true" 
+            android:layout_gravity="center"
+            
+            />
+    
+    <TextView android:id="@+id/commentsText"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="Comments"
+              android:textStyle="bold"
+                      android:textColor="#FFFCC125"
+              
+              />
+    
+   	<ListView android:layout_width="fill_parent"
+    	android:layout_height="100dip" 
+    	android:id="@+id/commentsthread"
+		android:layout_marginTop="10dip" />
+
+</LinearLayout>
+</ScrollView>

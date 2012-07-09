@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<style name="DisableFocus">
+<item name="android:focusable">false</item>
+<item name="android:focusableInTouchMode">false</item>
+<item name="android:clickable">false</item>
+</style>
+</resources>

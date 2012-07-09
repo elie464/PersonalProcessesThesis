@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<specificationSet xmlns="http://www.yawlfoundation.org/yawlschema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.2" xsi:schemaLocation="http://www.yawlfoundation.org/yawlschema http://www.yawlfoundation.org/yawlschema/YAWL_Schema2.2.xsd">
+  <specification uri="VISAapplication">
+    <metaData>
+      <creator>ernestlie</creator>
+      <description>No description has been given.</description>
+      <version>0.1</version>
+      <persistent>false</persistent>
+      <identifier>UID_9015251e-f59d-4867-a0ea-510f235f4178</identifier>
+    </metaData>
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" />
+    <decomposition id="New_Net_1" isRootNet="true" xsi:type="NetFactsType">
+      <processControlElements>
+        <inputCondition id="InputCondition_1">
+          <flowsInto>
+            <nextElementRef id="Prepare_Required_Documents_3" />
+          </flowsInto>
+        </inputCondition>
+        <task id="Prepare_Required_Documents_3">
+          <name>Prepare Required Documents</name>
+          <documentation>des: Please prepare the required documents for a VISA application to China. Please make sure to have your Original Passport ready, and that it is valid and has blank pages; A Passport Photo is also required.</documentation>
+          <flowsInto>
+            <nextElementRef id="Complete_VISA_Application_Form_at_Centre_7" />
+            <isDefaultFlow />
+          </flowsInto>
+          <flowsInto>
+            <nextElementRef id="Complete_VISA_Application_Form_Online_5" />
+            <predicate ordering="0">true()</predicate>
+          </flowsInto>
+          <join code="xor" />
+          <split code="xor" />
+        </task>
+        <task id="Complete_VISA_Application_Form_Online_5">
+          <name>Complete VISA Application Form Online</name>
+          <documentation>des: Complete Visa Application Form by completing the online form at http://www.visaforchina.org/SYD_EN/| int: true</documentation>
+          <flowsInto>
+            <nextElementRef id="Book_Appointment_8" />
+          </flowsInto>
+          <join code="xor" />
+          <split code="and" />
+        </task>
+        <task id="Complete_VISA_Application_Form_at_Centre_7">
+          <name>Complete VISA Application Form at Centre</name>
+          <documentation>des: Complete Visa Application Form at the Chinese Visa Application Centre. Forms are available at the Centre.| int: false |lon:151.209083| lat:-33.876486| stt:09-00| ent:15-00</documentation>
+          <flowsInto>
+            <nextElementRef id="Book_Appointment_8" />
+          </flowsInto>
+          <join code="xor" />
+          <split code="and" />
+        </task>
+        <task id="Book_Appointment_8">
+          <name>Book Appointment</name>
+          <documentation>des:Book an Appointment to have your Visa Application reviewed.</documentation>
+          <flowsInto>
+            <nextElementRef id="Attend_Appointment_9" />
+          </flowsInto>
+          <join code="xor" />
+          <split code="and" />
+        </task>
+        <task id="Attend_Appointment_9">
+          <name>Attend Appointment</name>
+          <documentation>des: Attend appointment at scheduled day and time. Please bring necessary forms. Location is shown below: Level 5, 299 Elizabeth Street (the Opposite of Museum Station), Sydney, NSW 2000, Australia.| int: false |lon:151.209083| lat:-33.876486| stt:09-00| ent:15-00| dur:1.00</documentation>
+          <flowsInto>
+            <nextElementRef id="Pay_for_VISA_11" />
+            <isDefaultFlow />
+          </flowsInto>
+          <flowsInto>
+            <nextElementRef id="Application_Denied_12" />
+            <predicate ordering="0">true()</predicate>
+          </flowsInto>
+          <join code="xor" />
+          <split code="xor" />
+        </task>
+        <task id="Pay_for_VISA_11">
+          <name>Pay for VISA</name>
+          <documentation>des: Application accepted. Please Pay for your Visa and submit your passport | int: false |lon:151.209083| lat:-33.876486| stt:09-00| ent:15-00</documentation>
+          <flowsInto>
+            <nextElementRef id="Return_to_Centre_for_Passport_Collection_10" />
+          </flowsInto>
+          <join code="xor" />
+          <split code="and" />
+        </task>
+        <task id="Application_Denied_12">
+          <name>Application Denied</name>
+          <documentation>des:Application has been Denied. Please call +61-2-94758800 or +61-2-94758888 for further enquiries or email sydcenter@visaforchina.org.</documentation>
+          <flowsInto>
+            <nextElementRef id="OutputCondition_2" />
+          </flowsInto>
+          <join code="xor" />
+          <split code="and" />
+        </task>
+        <task id="Return_to_Centre_for_Passport_Collection_10">
+          <name>Return to Centre for Passport Collection</name>
+          <documentation>des: Collect your passport at the Centre. Typical Visa applications take up to 5 business days to process| int: false |lon:151.209083| lat:-33.876486| stt:09-00| ent:15-00</documentation>
+          <flowsInto>
+            <nextElementRef id="OutputCondition_2" />
+          </flowsInto>
+          <join code="xor" />
+          <split code="and" />
+        </task>
+        <outputCondition id="OutputCondition_2" />
+      </processControlElements>
+    </decomposition>
+  </specification>
+  <layout>
+    <locale language="en" country="US" />
+    <specification id="VISAapplication">
+      <size w="129" h="46" />
+      <net id="New_Net_1">
+        <bounds x="0" y="0" w="1097" h="532" />
+        <frame x="11" y="33" w="1101" h="536" />
+        <viewport x="0" y="0" w="1101" h="536" />
+        <vertex id="InputCondition_1">
+          <attributes>
+            <bounds x="36.0" y="268.0" w="32.0" h="32.0" />
+          </attributes>
+        </vertex>
+        <vertex id="OutputCondition_2">
+          <attributes>
+            <bounds x="1040.0" y="268.0" w="32.0" h="32.0" />
+          </attributes>
+        </vertex>
+        <container id="Prepare_Required_Documents_3">
+          <vertex>
+            <iconpath>/org/yawlfoundation/yawl/editor/resources/taskicons/Manual.png</iconpath>
+            <attributes>
+              <bounds x="136.0" y="268.0" w="32.0" h="32.0" />
+            </attributes>
+          </vertex>
+          <decorator type="XOR_split">
+            <position>13</position>
+            <attributes>
+              <bounds x="167.0" y="268.0" w="11.0" h="32.0" />
+              <size w="11" h="32" />
+            </attributes>
+          </decorator>
+          <label>
+            <attributes>
+              <bounds x="108.0" y="300.0" w="96.0" h="57.0" />
+            </attributes>
+          </label>
+        </container>
+        <container id="Complete_VISA_Application_Form_Online_5">
+          <vertex>
+            <iconpath>/org/yawlfoundation/yawl/editor/resources/taskicons/Manual.png</iconpath>
+            <attributes>
+              <bounds x="304.0" y="132.0" w="32.0" h="32.0" />
+            </attributes>
+          </vertex>
+          <label>
+            <attributes>
+              <bounds x="272.0" y="164.0" w="97.0" h="77.0" />
+            </attributes>
+          </label>
+        </container>
+        <container id="Complete_VISA_Application_Form_at_Centre_7">
+          <vertex>
+            <iconpath>/org/yawlfoundation/yawl/editor/resources/taskicons/Manual.png</iconpath>
+            <attributes>
+              <bounds x="300.0" y="320.0" w="32.0" h="32.0" />
+            </attributes>
+          </vertex>
+          <label>
+            <attributes>
+              <bounds x="268.0" y="352.0" w="97.0" h="97.0" />
+            </attributes>
+          </label>
+        </container>
+        <container id="Book_Appointment_8">
+          <vertex>
+            <iconpath>/org/yawlfoundation/yawl/editor/resources/taskicons/Manual.png</iconpath>
+            <attributes>
+              <bounds x="464.0" y="248.0" w="32.0" h="32.0" />
+            </attributes>
+          </vertex>
+          <decorator type="XOR_join">
+            <position>12</position>
+            <attributes>
+              <bounds x="454.0" y="248.0" w="11.0" h="32.0" />
+              <size w="11" h="32" />
+            </attributes>
+          </decorator>
+          <label>
+            <attributes>
+              <bounds x="428.0" y="280.0" w="97.0" h="41.0" />
+            </attributes>
+          </label>
+        </container>
+        <container id="Attend_Appointment_9">
+          <vertex>
+            <iconpath>/org/yawlfoundation/yawl/editor/resources/taskicons/Manual.png</iconpath>
+            <attributes>
+              <bounds x="572.0" y="240.0" w="32.0" h="32.0" />
+            </attributes>
+          </vertex>
+          <decorator type="XOR_split">
+            <position>13</position>
+            <attributes>
+              <bounds x="603.0" y="240.0" w="11.0" h="32.0" />
+              <size w="11" h="32" />
+            </attributes>
+          </decorator>
+          <label>
+            <attributes>
+              <bounds x="544.0" y="272.0" w="96.0" h="38.0" />
+            </attributes>
+          </label>
+        </container>
+        <container id="Return_to_Centre_for_Passport_Collection_10">
+          <vertex>
+            <iconpath>/org/yawlfoundation/yawl/editor/resources/taskicons/Manual.png</iconpath>
+            <attributes>
+              <bounds x="848.0" y="284.0" w="32.0" h="32.0" />
+            </attributes>
+          </vertex>
+          <label>
+            <attributes>
+              <bounds x="816.0" y="316.0" w="97.0" h="77.0" />
+            </attributes>
+          </label>
+        </container>
+        <container id="Pay_for_VISA_11">
+          <vertex>
+            <iconpath>/org/yawlfoundation/yawl/editor/resources/taskicons/Manual.png</iconpath>
+            <attributes>
+              <bounds x="720.0" y="292.0" w="32.0" h="32.0" />
+            </attributes>
+          </vertex>
+          <label>
+            <attributes>
+              <bounds x="688.0" y="324.0" w="96.0" h="19.0" />
+            </attributes>
+          </label>
+        </container>
+        <container id="Application_Denied_12">
+          <vertex>
+            <iconpath>/org/yawlfoundation/yawl/editor/resources/taskicons/Manual.png</iconpath>
+            <attributes>
+              <bounds x="720.0" y="192.0" w="32.0" h="32.0" />
+            </attributes>
+          </vertex>
+          <label>
+            <attributes>
+              <bounds x="688.0" y="224.0" w="96.0" h="38.0" />
+            </attributes>
+          </label>
+        </container>
+        <flow source="InputCondition_1" target="Prepare_Required_Documents_3">
+          <ports in="13" out="12" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+          </attributes>
+        </flow>
+        <flow source="Prepare_Required_Documents_3" target="Complete_VISA_Application_Form_Online_5">
+          <ports in="2" out="12" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+          </attributes>
+        </flow>
+        <flow source="Prepare_Required_Documents_3" target="Complete_VISA_Application_Form_at_Centre_7">
+          <ports in="3" out="12" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+          </attributes>
+        </flow>
+        <flow source="Complete_VISA_Application_Form_Online_5" target="Book_Appointment_8">
+          <ports in="13" out="2" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+          </attributes>
+        </flow>
+        <flow source="Complete_VISA_Application_Form_at_Centre_7" target="Book_Appointment_8">
+          <ports in="13" out="4" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+          </attributes>
+        </flow>
+        <flow source="Book_Appointment_8" target="Attend_Appointment_9">
+          <ports in="13" out="12" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+          </attributes>
+        </flow>
+        <flow source="Attend_Appointment_9" target="Application_Denied_12">
+          <ports in="2" out="12" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+          </attributes>
+        </flow>
+        <flow source="Attend_Appointment_9" target="Pay_for_VISA_11">
+          <ports in="2" out="12" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+          </attributes>
+        </flow>
+        <flow source="Pay_for_VISA_11" target="Return_to_Centre_for_Passport_Collection_10">
+          <ports in="13" out="12" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+          </attributes>
+        </flow>
+        <flow source="Application_Denied_12" target="OutputCondition_2">
+          <ports in="13" out="12" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+          </attributes>
+        </flow>
+        <flow source="Return_to_Centre_for_Passport_Collection_10" target="OutputCondition_2">
+          <ports in="13" out="12" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+          </attributes>
+        </flow>
+      </net>
+    </specification>
+  </layout>
+</specificationSet>
+
+

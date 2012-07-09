@@ -1,0 +1,44 @@
+10
+
+dir
+413
+svn://soc.cse.unsw.edu.au/snp/ProcessAssistant/bin/res
+svn://soc.cse.unsw.edu.au/snp
+
+
+
+2012-05-13T10:13:41.858526Z
+412
+prash
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+c7e8bdf8-38af-4bcd-876f-f849a661f01d
+
+
+
+
+
+
+0
+
+drawable-hdpi
+dir
+
+drawable-ldpi
+dir
+
+drawable-mdpi
+dir
+
